@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var pets = require('./routes/projects');
 var cors = require('cors');
 var routes = require('./routes/pets');
 
@@ -32,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/api/pets', pets);
+app.use('/api/pets', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
