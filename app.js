@@ -9,8 +9,9 @@ var cors = require('cors');
 var routes = require('./routes/pets');
 
 var app = express();
+// mongodb://kellyannbyrne:rainbow24@ds231739.mlab.com:31739/heroku_6ds5mqz7
 // mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db
-mongoose.connect('mongodb://kellyannbyrne:rainbow24@ds231739.mlab.com:31739/heroku_6ds5mqz7', {useMongoClient: true}, 
+mongoose.connect('mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db', {useMongoClient: true}, 
   function(error) {
     if(error) {console.log(error)}
       console.log('connected');
