@@ -7,7 +7,7 @@ var petSchema = new Schema({
 
 });
 
-var Pet = monggose.model('Project', petSchema);
+var Pet = mongoose.model('Pet', petSchema);
 
 // Get All Pets
 router.get('/', function(req, res, next) {
