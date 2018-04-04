@@ -5,17 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var pets = require('./routes/pets');
+var pets = require('./routes/projects');
 var cors = require('cors');
 var routes = require('./routes/pets');
 
 var app = express();
 // mongodb://kellyannbyrne:rainbow24@ds231739.mlab.com:31739/heroku_6ds5mqz7
 // mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db
-mongoose.connect('mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db', 
-  function(error) {
-    if(error) {console.log(error)}
-      console.log('connected');
+mongoose.connect('mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db', {useMongoClient: true})
+  .then(function() {
+    console.log('connected');
+  }).catch(function(err){
+    console.log(err);
   });
 
 // view engine setup
