@@ -4,19 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var cors = require('cors');
 var routes = require('./routes/pets');
 
 var app = express();
 // mongodb://kellyannbyrne:rainbow24@ds231739.mlab.com:31739/heroku_6ds5mqz7
 // mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db
-mongoose.connect('mongodb://kelly:1234@ds127044.mlab.com:27044/pets-db')
-  .then(function() {
-    console.log('connected');
-  }).catch(function(err){
-    console.log(err);
-  });
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

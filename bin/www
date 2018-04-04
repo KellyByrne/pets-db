@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('pets-db:server');
 var http = require('http');
-
+const mongoose = require('mongoose');
 /**
  * Get port from environment and store in Express.
  */
@@ -25,7 +25,13 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+mongoose.connect('mongodb://kelly:1234@ds127044.mlab.com:27044/pets-db')
+.then(function() {
+  console.log('connected');
+  server.listen(port);
+}).catch(function(err){
+  console.log(err);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
