@@ -11,7 +11,7 @@ var routes = require('./routes/pets');
 var app = express();
 // mongodb://kellyannbyrne:rainbow24@ds231739.mlab.com:31739/heroku_6ds5mqz7
 // mongodb://kellyannbyrne:rainbow24@ds127044.mlab.com:27044/pets-db
-mongoose.connect('mongodb://kelly:1234.mlab.com:31749/heroku_hpcnx894')
+mongoose.connect('mongodb://kelly:1234@ds231749.mlab.com:31749/heroku_hpcnx894')
   .then(function() {
     console.log('connected');
   }).catch(function(err){
